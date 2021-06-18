@@ -1,6 +1,6 @@
-@import "vars";
 @import "fonts";
 @import "reset";
+@import "vars";
 @import "global";
 
 .header {
@@ -46,43 +46,41 @@
     @extend %rubik-500;
     font-size: 15px;
     transition: all 0.3s;
-  }
 
-  &__link:hover {
-    font-weight: 700;
-    color: $accent;
+    &:hover {
+      font-weight: 700;
+      color: $accent;
+    }
   }
-
 }
 
 .navigation {
   display: flex;
   position: relative;
   z-index: 5;
-}
 
-.navigation::after {
-  content: "";
-  width: 50px;
-  z-index: -1;
-  position: absolute;
-  width: 63px;
-  height: 50px;
-  background-color: $accent;
-  left: 100px;
-}
-.navigation::before{
-  content: "";
-  position: absolute;
-  background-color: #fff;
-  width: 1px;
-  height: 33px;
-  right: 130px;
-  top: 8px;
-  z-index: 1;
-}
+  &::after {
+    content: "";
+    width: 50px;
+    z-index: -1;
+    position: absolute;
+    width: 63px;
+    height: 50px;
+    background-color: $accent;
+    left: 100px;
+  }
 
-.navigation {
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 1px;
+    height: 33px;
+    right: 130px;
+    top: 8px;
+    z-index: 1;
+  }
+
   &__item:not(:last-child) {
     margin-right: 20px;
   }
@@ -108,8 +106,9 @@
     background-color: $accent;
     position: relative;
   }
+
   &__item--basket:hover,
-  &__item--like:hover{
+  &__item--like:hover {
     background-color: #a3bbc8;
     border: 1px solid #000;
 
@@ -118,7 +117,8 @@
   &__item--search {
     background-color: #edf1f4;
   }
-  &__item--search:hover{
+
+  &__item--search:hover {
     background-color: $accent;
     border: 1px solid #000;
   }
@@ -127,7 +127,7 @@
     background-color: #a3bbc8;
   }
 
-  &__item--menu:hover{
+  &__item--menu:hover {
     background-color: $accent;
     border: 1px solid #000;
   }
