@@ -8,7 +8,7 @@ html {
     box-sizing: inherit;
   }
   
-  ul[class],
+  ul,
   ol[class] {
     padding: 0;
   }
@@ -21,7 +21,7 @@ html {
   h5,
   h6,
   p,
-  ul[class],
+  ul,
   ol[class],
   li,
   figure,
@@ -32,7 +32,7 @@ html {
     margin: 0;
   }
   
-  ul[class] {
+  ul {
     list-style: none;
   }
   

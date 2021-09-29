@@ -4,34 +4,14 @@
 @import "global";
 
 .header {
-
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 48px 0;
-  }
+  padding: 48px 0;
 }
 
-.logo {
-  display: inline-flex;
-  align-items: center;
-  font-size: 36px;
-  line-height: 58px;
-  font-weight: 700;
-  color: #436372;
-
-  &__img {
-    width: 51px;
-    height: 39px;
-  }
-}
 
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 63%;
 
   &__list {
     display: flex;
@@ -68,6 +48,7 @@
     height: 50px;
     background-color: $accent;
     left: 100px;
+    top: 1px;
   }
 
   &::before {
@@ -86,59 +67,71 @@
   }
 
   &__item {
-    text-align: center;
-    background-color: #ccc;
     width: 50px;
     height: 50px;
-  }
-
-  &__item--search,
-  &__item--menu,
-  &__item--basket,
-  &__item--like {
-    border-radius: 50%;
     border: 1px solid transparent;
-    transition: all 0.3s;
   }
 
-  &__item--basket,
-  &__item--like {
-    background-color: $accent;
-    position: relative;
-  }
-
-  &__item--basket:hover,
-  &__item--like:hover {
-    background-color: #a3bbc8;
-    border: 1px solid #000;
-
-  }
-
-  &__item--search {
-    background-color: #edf1f4;
-  }
-
-  &__item--search:hover {
-    background-color: $accent;
-    border: 1px solid #000;
-  }
-
-  &__item--menu {
-    background-color: #a3bbc8;
-  }
-
-  &__item--menu:hover {
-    background-color: $accent;
-    border: 1px solid #000;
-  }
 
   &__link {
-    padding: 17px 0;
-  }
+    padding: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    text-align: center;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: all 0.3s;
 
-  &__img {
-    margin: 0 auto;
-    padding: 17px;
+    &--search {
+      background-image: url(../images/linz-icon.svg);
+      width: 15px;
+      height: 15px;
+    }
+
+    &--menu {
+      background-image: url(../images/menu-icon.svg);
+      width: 15px;
+      height: 15px;
+    }
+
+    &--basket {
+      background-image: url(../images/basket-icon.svg);
+    }
+
+    &--like {
+      background-image: url(../images/like-icon.svg);
+    }
+
+    &--basket,
+    &--like {
+      background-color: $accent;
+      position: relative;
+
+      &:hover {
+        background-color: #a3bbc8;
+        border: 1px solid #000;
+
+      }
+    }
+
+    &--search {
+      background-color: #edf1f4;
+
+      &:hover {
+        background-color: $accent;
+        border: 1px solid #000;
+      }
+    }
+
+    &--menu {
+      background-color: #a3bbc8;
+
+      &:hover {
+        background-color: $accent;
+        border: 1px solid #000;
+      }
+    }
   }
 
   &__number {
@@ -157,6 +150,57 @@
 }
 
 
+.content {
+
+
+  &__item {
+    height: 80vh;
+    background-color: $accent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  &__inner {
+    max-width: 440px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    @extend %rubik-500;
+    font-size: 72px;
+    line-height: 1;
+    font-weight: bold;
+    color: #243f4d;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    @extend %rubik-500;
+    color: #436372;
+    font-size: 20px;
+    max-width: 360px;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    padding: 15px 30px 15px 15px;
+    background-color: #a3bbc8;
+    color: #fff;
+    display: block;
+    max-width: 220px;
+
+    :after {
+      content: "";
+      background-image: url(../images/arrow-r.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+}
 
 
 
@@ -169,6 +213,46 @@
 
 
 
+.footer {
+  padding-top: 70px;
+
+  &__top {
+    margin-bottom: 50px;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    max-width: 280px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @extend %dmsans-700;
+    color: #1f2044;
+    font-size: 16px;
+  }
+
+  &__form {
+    display: flex;
+
+    &-btn {
+      background-color: #a3bbc8;
+      color: #fff;
+
+      &:hover {
+        background-color: #234969;
+      }
+    }
+
+    &-input::placeholder {
+      border: none;
+      background-color: #fef7f0;
+      color: #234969;
+    }
+  }
 
 
 
@@ -176,7 +260,30 @@
 
 
 
+  &__botom {
+    border-top: 1px solid #dae4e9;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
 
+  &__menu {
+    display: inherit;
 
+    &-item:not(:last-child) {
+      border-right: 1px solid #000;
+    }
 
-@import "media";
+    &-link {
+      padding-right: 15px;
+      padding-left: 15px;
+
+      &:hover {
+        cursor: pointer;
+        color: $accent;
+        background-color: #234969;
+      }
+    }
+  }
+}
